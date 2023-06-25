@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cube Calculator</title>
+    <style>
+      /* Some basic styling */
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+
+      h1 {
+        margin-bottom: 20px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      input {
+        width: 200px;
+        padding: 5px;
+        margin-bottom: 10px;
+      }
+
+      button {
+        padding: 8px 16px;
+      }
+
+      p {
+        margin-top: 20px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Cube Calculator</h1>
+    <label for="sideLength">Enter the side length:</label>
+    <input type="number" id="sideLength" />
+    <button onclick="calculateCube()">Calculate</button>
+    <p id="result"></p>
+
+    <script>
+      function calculateCube() {
+        const sideLengthInput = document.getElementById("sideLength");
+        const resultElement = document.getElementById("result");
+
+        const sideLength = parseFloat(sideLengthInput.value);
+
+        if (isNaN(sideLength)) {
+          resultElement.textContent =
+            "Invalid input. Please enter a valid number.";
+        } else {
+          const volume = sideLength ** 3;
+          resultElement.textContent = "The volume of the cube is: " + volume;
+        }
+      }
+    </script>
+  </body>
+</html>
